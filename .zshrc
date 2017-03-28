@@ -36,7 +36,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode os_icon battery context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs ram virtualenv rbenv nvm)
 
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=10
 
 #POWERLEVEL9K_CUSTOM_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
 POWERLEVEL9K_TIME_FORMAT="%D{\ue12e %H:%M \ue868 %d.%m.%y}"
@@ -98,11 +98,11 @@ source resty
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+else
+   export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -119,7 +119,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tmux="tmux -2"
-
+alias dunlock="bash ~/unlock.sh"
 #source ~/color-theme-zenburn/zenburn.sh
 BoldAsFont=yes
 Term=xterm-256color
